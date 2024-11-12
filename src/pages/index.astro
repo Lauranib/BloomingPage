@@ -2,11 +2,63 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
+import { Image } from 'astro:assets';
+import HeroVector from "../assets/images/hero_vector2.svg";
+import Bloom1 from "../assets/images/bloom_1.jpg";
+import Bloom2 from "../assets/images/bloom_2.jpg";
+import Moodboard from "../assets/images/moodboard.svg";
+import Sketch from "../assets/images/sketch.svg";
+import Adobe from "../assets/images/illustrator.svg";
 ---
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
+	<article id="hero" class="">
+ 		<Image src={HeroVector} alt="Hero" class="w-screen" loading="lazy"/>
 	</article>
+
+	<article id="blooming" class="px-96 pt-16">
+		<h2 class="text-6xl font-medium	 font-afacad flex justify-center pb-8">Blooming af Laura</h2>
+		<h3 class="text-3xl font-afacad  flex justify-center text-center pb-8">En Display Font hvor fonten har en blød, organisk form med blomsterdetaljer og der giver et indtryk af lethed og romantik med et feminint præg.</h3>
+		<p class="text-base	font-afacad flex justify-center pb-8">Med inspiration fra både klassisk kalligrafi og organiske blomsterformer har jeg skabt en ny dekorativ skrift. Grundformen er baseret på en klassisk 'modern' stil, tilført delikate, blomsterinspirerede detaljer og lette kalligrafiske streger, som skaber et romantisk og naturligt udtryk. Skriften balancerer kontraster: det klassiske og det botaniske i samspil, den bløde, runde udvendige kontur sat op imod elegante, indre kurver med blomsterornamenter. Den bløde variation i linjernes tykkelse, som skifter mellem lette og kraftigere streger, tilføjer skriften et harmonisk og yndefuldt udtryk. Skriften er bedst egnet til gengivelse i større formater, hvor dens detaljer virkelig kan træde frem.</p>
+	</article>
+
+	<article id="fonten" class="pt-28 pb-16">
+		<h2 class="text-6xl font-medium	 font-afacad flex justify-center pb-8 px-96">Brug af fonten</h2>
+		<h3 class="text-3xl font-afacad  flex justify-center text-center pb-8 px-96">Denne display font kan bruges forskellige steder såsom overskrifter/titler, branding, festtryk og invitationer</h3>
+		<div class="grid grid-cols-[1fr_1fr] gap-8 px-72">
+			<Image src={Bloom1} alt="Blooming picture" loading="lazy"/>
+			<Image src={Bloom2} alt="Blooming picture" loading="lazy"/>
+		</div>
+	</article>
+
+	<section id="processen" class="pt-16">
+		<h2 class="text-6xl font-medium	font-afacad flex justify-center pb-8">Processen</h2>
+		<p class="text-base	font-afacad flex justify-center pb-28 px-96">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at nunc pellentesque, bibendum ipsum a, finibus turpis. Cras eu rhoncus tellus, quis placerat est. Vivamus feugiat elit est, quis mollis purus convallis in. Fusce feugiat condimentum nunc. Suspendisse sed sem nisl. Sed sit amet felis rhoncus, molestie velit quis, molestie ligula. Nullam cursus purus vitae mauris finibus, sit amet bibendum nisi cursus. In malesuada interdum ligula rhoncus fermentum. Aliquam ac risus nulla. Maecenas et leo ex. In accumsan, velit et vehicula tincidunt, massa nulla semper purus, ut aliquet arcu libero et tortor. Proin vel varius ligula. In arcu nibh, imperdiet vitae velit quis, sagittis facilisis arcu. Ut at ultrices justo.</p>
+		<div class="px-72 pb-8">
+			<Image src={Moodboard} alt="Moodboard fonts" class="w-screen" loading="lazy"/>
+		</div>
+		<div class="px-72 pb-8">
+			<Image src={Sketch} alt="Moodboard fonts" class="w-screen" loading="lazy"/>
+		</div>
+		<div class="px-72 pb-16">
+			<Image src={Adobe} alt="Moodboard fonts" class="w-screen" loading="lazy"/>
+		</div>
+	</section>
 </MainLayout>
+
+<style>
+
+	
+	#blooming, #fonten {
+		background-color: #05377c;
+	}
+	#blooming h2, #blooming h3, #blooming p, #fonten h2, #fonten h3 {
+		color: #fffbe2;
+	}
+
+	#processen {
+		background-color: #f9c9bb;
+	}
+	#processen h2, #processen p {
+		color: #05377c;
+	}
+</style>
